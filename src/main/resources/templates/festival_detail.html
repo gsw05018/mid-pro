@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/festival_detail.css">
 
-    <!-- 제이쿼리 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
         .map_wrap {
@@ -34,47 +32,44 @@
 
 <body>
 <div layout:fragment="content" class="container my-3">
-    <div class="wrap-box">
+    <div class="wrap-box" >
         <!-- 1. 선택한 축제 제목(title) 띄우기 -->
         <h1 th:text="${selectedFestival.title}"></h1>
 
-        <div class="image">
-            <div class="image">
-                <img th:src="${selectedFestival.picture}" alt="이미지 대체">
+        <div class="image" >
+            <div class="image-box">
+                <img th:src="${selectedFestival.picture}" alt="이미지 대체" style="border-radius : 10px ; box-shadow: 0 2px 6px 0 rgba(68, 68, 68, 0.08);">
             </div>
             <script src="script.js"></script>
             <div class="info-container">
                 <!-- 여기에 추가 정보나 텍스트를 넣을 수 있음 -->
                 <table>
-                    <th></th>
-                    <th></th>
                     <tr>
-                        <td>이름</td>
-                        <td th:text="${selectedFestival.title}"></td>
+                        <th>축제 이름</th>
+                        <td th:text="${selectedFestival.title}" style="border-top :1px solid #ccc;"></td>
                     </tr>
                     <tr>
-                        <td>주소</td>
+                        <th>축제 주소</th>
                         <td th:text="${selectedFestival.address}"></td>
-                        <div id="selectedFestivalAdress" th:text="${selectedFestival.address}" style="display:none;"></div>
                     </tr>
                     <tr>
-                        <td>행사일자</td>
+                        <th>행사 일자</th>
                         <td th:text="${selectedFestival.event_Period}"</td>
                     </tr>
-                    <th></th>
-                    <th></th>
                 </table>
+                <div class="button-container" style="margin-top: 20px; margin-left : 69% ;">
+                    <a th:href="${selectedFestival.siteLink}" target="_blank" class="square-button">축제 사이트로 이동</a>
+                    <a href="#" class="shortcut-button">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
             </div>
+
         </div>
-        <div class="button-container" style="margin-top: 100px;">
-            <a th:href="${selectedFestival.siteLink}" target="_blank" class="square-button">축제 사이트로 이동</a>
-            <a href="#" class="shortcut-button">
-                <i class="fas fa-link"></i>
-            </a>
-        </div>
+
     </div>
 
-    <h1>축제 장소</h1>
+    <h1 style="margin-top : 100px ;">축제 장소</h1>
     <div class="map">
         <div id="map" style="width:70%;height:550px;"></div>
         <script type="text/javascript"
@@ -361,10 +356,10 @@
     <div class="comment">
         <h1>댓글 작성하기</h1>
         <!-- 5. 댓글 작성 기능 추가 -->
-        <div>
+        <form th:object="${answerForm}" method="post">
             <input type="text" placeholder="댓글 작성은 큰 힘이 됩니다." id="commentInput">
-            <button id="commentSubmit">댓글 작성</button>
-        </div>
+            <button id="commentSubmit" type="submit">댓글 작성</button>
+        </form>
 
         <ul class="commentList">
             <li class="commentListList">
@@ -375,18 +370,21 @@
         </ul>
     </div>
     <!-- 댓글 구현 끝 -->
+
+    <!-- JavaScript 코드를 추가하여 댓글 작성 기능을 구현할 수 있습니다. -->
+    <script>
+        $(document).ready(function () {
+            $("#commentSubmit").click(function () {
+                var commentText = $("#commentInput").val();
+                // 여기에서 서버에 댓글을 전송하고 목록에 추가하는 로직을 추가해야 합니다.
+                // AJAX나 기타 웹 요청 기술을 사용하여 서버와 통신할 수 있습니다.
+            });
+        });
+    </script>
+
+
 </div>
 
-<!-- JavaScript 코드를 추가하여 댓글 작성 기능을 구현할 수 있습니다. -->
-<script>
-    $(document).ready(function () {
-        $("#commentSubmit").click(function () {
-            var commentText = $("#commentInput").val();
-            // 여기에서 서버에 댓글을 전송하고 목록에 추가하는 로직을 추가해야 합니다.
-            // AJAX나 기타 웹 요청 기술을 사용하여 서버와 통신할 수 있습니다.
-        });
-    });
-</script>
-</div>
+
 </body>
 </html>

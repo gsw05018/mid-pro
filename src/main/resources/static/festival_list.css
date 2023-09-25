@@ -381,7 +381,6 @@ input {
 .festival-list {
   display: flex;
   flex-wrap: wrap; /* 화면 크기에 맞게 줄바꿈 */
-  justify-content: space-between; /* 아이템들을 좌우로 분산 정렬 */
   margin-top: 80px;
   margin-left: 180px;
   margin-right: 180px;
@@ -390,15 +389,16 @@ input {
 
 .festival-item {
   width: calc(
-    25% - 20px
+    25% - 15px
   ); /* 한 줄에 4개씩 아이템 표시, 여백을 포함한 폭 설정 */
   height: auto;
   margin-bottom: 100px; /* 아이템 아래 여백 */
+  margin-right : 15px ;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
 }
 
 .festival-item img {
-  width: 350px; /* 이미지 너비 */
+  width: 100%; /* 이미지 너비 */
   height: 400px; /* 이미지 비율 유지 */
 }
 
@@ -429,8 +429,8 @@ input {
 }
 
 .page-number {
-  margin: 0 5px; /* 페이지 번호 간격 조절 */
-  font-size: 25px; /* 페이지 번호 글꼴 크기 */
+  font-size: 35px; /* 페이지 번호 글꼴 크기 */
+  margin : 15px ;
 }
 
 .page-number a {

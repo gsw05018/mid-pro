@@ -31,11 +31,11 @@
 <body>
 <div layout:fragment="content" class="container my-3">
     <div><br><br><br><br></div>
-    <h1 style="margin-left: 10% !important;">진행 중인 축제 리스트</h1>
+    <h1 style="margin-left: 10% ; margin-top :50px ; font-size : 40px ;">진행 중인 축제 리스트</h1>
 
     <br>
     <br>
-    <div class="festival-search" style="margin-left: 10% !important;">
+    <div class="festival-search" style="margin-left: 10% ;">
         <select id="region-select">
             <option value="">전체 지역</option>
             <option value="서울">서울</option>
@@ -66,7 +66,7 @@
 
     <div class="festival-pagination">
         <!-- 이전 페이지로 이동하는 링크 -->
-        <a th:if="${currentPage > 1}" th:href="@{|/festival/list/page/${currentPage - 1}|}">&lt;</a>
+        <a th:if="${currentPage > 1}" th:href="@{|/festival/list/page/${currentPage - 1}|}" style="font-size : 30px ;"><i class="fa-solid fa-chevron-left"></i></a>
 
         <!-- 페이지 버튼 표시 -->
         <span th:each="pageNum : ${#numbers.sequence(1, totalPages)}">
@@ -75,7 +75,7 @@
     </span>
 
         <!-- 다음 페이지로 이동하는 링크 -->
-        <a th:if="${currentPage < totalPages}" th:href="@{|/festival/list/page/${currentPage + 1}|}">&gt;</a>
+        <a th:if="${currentPage < totalPages}" th:href="@{|/festival/list/page/${currentPage + 1}|}" style="font-size : 30px ;" ><i class="fa-solid fa-chevron-right"></i></a>
     </div>
 </div>
 </body>
