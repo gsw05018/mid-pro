@@ -24,10 +24,6 @@
             }
         }
     </script>
-    <!-- 버튼을 추가하고 클래스를 지정하여 숨김 및 표시를 제어 -->
-    <div class="adminbutton">
-        <button class="adminbutton1 admin-button">작성</button>
-    </div>
 
     <!-- 찾기 기능 -->
     <div class="search-button">
@@ -55,6 +51,9 @@
             <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
         </tr>
         </tbody>
+        <div class="adminbutton">
+            <button class="adminbutton1 admin-button">작성</button>
+        </div>
     </table>
 
     <!-- 페이징처리 시작 -->
