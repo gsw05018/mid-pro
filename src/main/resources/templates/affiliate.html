@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제휴</title>
+    <style>
+        h1 {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 100px;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+input {
+  width: 65%;
+  height: 40px;
+}
+
+.applyinputtitle {
+  position: absolute;
+  height: 40px;
+  left: 20%;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+h4 {
+  text-align: left;
+  margin-top: 6%;
+  margin-left: 20%;
+  margin-bottom: -5%;
+  font-size: 20px;
+}
+
+.applyinputform {
+  position: absolute;
+  height: 65%;
+  left: 20%;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.applyfinal {
+  position: absolute;
+  top: 120%;
+  right: 15%;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  font-size: 19px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: white;
+  font-weight: bold;
+  position: relative;
+  margin-top: 50%;
+  margin-bottom: 50px;
+}
+
+button:hover {
+  background-color: #87cefa;
+}
+
+    </style>
+</head>
+<body>
+<div layout:fragment="content" class="container my-3" style="margin-top: 100px !important;">
+    <h1> 축제 제휴문의</h1>
+    <h3> 축제관련 제휴를 원하신다면 여기에 작성해 주세요.</h3>
+
+    <div class="inputtitle">
+        <input type="text" class="applyinputtitle" placeholder="업체명과 축제명을 입력해주세요">
+    </div>
+
+    <div class="inputbody">
+        <h4>담당자, 연락처, 메일주소 및 제휴 내용을 적어주세요.</h4>
+    </div>
+
+    <div class="applyform">
+        <input type="text" class="applyinputform" placeholder="양식에 맞춰 자유롭게 작성 해 주세요. ">
+    </div>
+
+    <div class="applyfinal">
+        <button>작성하기</button>
+    </div>
+</div>
+</body>
+</html>

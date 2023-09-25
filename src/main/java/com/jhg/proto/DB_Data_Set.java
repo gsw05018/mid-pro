@@ -31,7 +31,7 @@ public class DB_Data_Set {
 
         // boardId 1, 2, 3에 대해 13개의 데이터 생성
         Random random = new Random();
-        for (int boardId = 1; boardId <= 4; boardId++) {
+        for (int boardId = 1; boardId <= 6; boardId++) {
             for (int i = 1; i <= 13; i++) {
                 String subject = generateRandomSubject(boardId, i);
                 String content = generateRandomContent(boardId, i);
@@ -64,6 +64,10 @@ public class DB_Data_Set {
             return "[Q&A] ";
         } else if (boardId == 4) {
             return "[공지] ";
+        } else if (boardId == 5) {
+            return "[제휴] ";
+        } else if (boardId == 6) {
+            return "[신고] ";
         } else {
             return "기타";
         }

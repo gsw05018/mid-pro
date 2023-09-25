@@ -149,4 +149,26 @@ public class QuestionController {
         model.addAttribute("kw", kw);
         return "question_notification_list";
     }
+
+    @GetMapping("/affiliate")
+    public String affiliate_list(Model model,
+                                    @RequestParam(value = "page", defaultValue = "0") int page,
+                                    @RequestParam(value = "kw", defaultValue = "") String kw,
+                                    @RequestParam(value = "boardId", defaultValue = "5") Integer boardId) {
+        Page<Question> paging = this.questionService.getList(page, kw, boardId);
+        model.addAttribute("paging", paging);
+        model.addAttribute("kw", kw);
+        return "affiliate";
+    }
+
+    @GetMapping("/report")
+    public String report_list(Model model,
+                                 @RequestParam(value = "page", defaultValue = "0") int page,
+                                 @RequestParam(value = "kw", defaultValue = "") String kw,
+                                 @RequestParam(value = "boardId", defaultValue = "6") Integer boardId) {
+        Page<Question> paging = this.questionService.getList(page, kw, boardId);
+        model.addAttribute("paging", paging);
+        model.addAttribute("kw", kw);
+        return "report";
+    }
 }
